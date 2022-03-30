@@ -11,3 +11,12 @@ protected_web_paths:
   - /private/
   - /sites/default/files/private/
   - /sites/default/files/config/
+
+# Quicksilver Workflows on site creation
+workflows:
+  # New site creation
+  deploy_product:
+    after:
+      - description: "Install Drupal"
+        script: private/scripts/drush_site_install/drush_site_install.php
+        type: webphp
