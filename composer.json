@@ -6,6 +6,10 @@
   "repositories": [
     {
       "type": "composer",
+      "url": "https://asset-packagist.org"
+    },
+    {
+      "type": "composer",
       "url": "https://packages.drupal.org/8"
     },
     {
@@ -28,7 +32,7 @@
   "conflict": {
     "drupal/drupal": "*"
   },
-  "minimum-stability": "dev",
+  "minimum-stability": "stable",
   "prefer-stable": true,
   "extra": {
     "drupal-scaffold": {
@@ -49,7 +53,9 @@
         "type:drupal-core"
       ],
       "web/libraries/{$name}": [
-        "type:drupal-library"
+        "type:drupal-library",
+        "type:bower-asset",
+        "type:npm-asset"
       ],
       "web/modules/contrib/{$name}": [
         "type:drupal-module"
